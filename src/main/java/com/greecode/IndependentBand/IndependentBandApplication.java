@@ -8,6 +8,7 @@ public class IndependentBandApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(IndependentBandApplication.class, args);
+		System.out.println("Iniciou!");
 	}
 
 }
