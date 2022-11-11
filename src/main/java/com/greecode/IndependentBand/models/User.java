@@ -41,6 +41,11 @@ public class User {
     @ManyToMany(mappedBy = "musicsByMusic")
     private List<Music> musics;
 
+    // Um usuário pode ter muitos seguidores - followers
+    @OneToMany(mappedBy="to")
+    private List<Followers> followers;
 
-
+    // Um usuário pode seguir vários usuários - following
+    @OneToMany(mappedBy="from")
+    private List<Followers> following;
 }

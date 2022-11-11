@@ -21,7 +21,7 @@ public class Disc {
 
     private LocalDateTime created = LocalDateTime.now();
 
-    private String descricao;
+    private String description;
 
     private LocalDate release;
 

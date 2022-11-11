@@ -21,7 +21,7 @@ public class Music {
 
     private String duration;
 
-    private String lyrics;
+    private String lyric;
 
     private String description;
 
@@ -32,6 +32,8 @@ public class Music {
     private Integer like;
 
     private Integer dislike;
+
+    private Integer auditions;
 
 //    @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean deleted = false;

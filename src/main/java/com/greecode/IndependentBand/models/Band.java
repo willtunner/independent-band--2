@@ -19,6 +19,10 @@ public class Band {
 
     private String name;
 
+    private Integer like;
+
+    private Integer dislike;
+
     private LocalDateTime created = LocalDateTime.now();
 
 //    @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
