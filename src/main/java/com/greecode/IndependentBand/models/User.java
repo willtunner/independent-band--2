@@ -4,13 +4,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
 @Entity
 @NoArgsConstructor
+//@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,10 +24,11 @@ public class User {
 
     private String cellphone;
 
+    private String gender;
+
     private LocalDateTime created = LocalDateTime.now();
 
-//    @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
-    private Boolean deleted = false;
+    private Boolean deleted = Boolean.FALSE;
 
     @OneToMany(mappedBy = "user")
     private List<Email> emails;
@@ -48,4 +49,7 @@ public class User {
     // Um usuário pode seguir vários usuários - following
     @OneToMany(mappedBy="from")
     private List<Followers> following;
+
+    @PrePersist
+    public void prePersist() { setDeleted(false);}
 }

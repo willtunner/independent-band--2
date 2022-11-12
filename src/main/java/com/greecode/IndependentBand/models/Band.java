@@ -19,9 +19,11 @@ public class Band {
 
     private String name;
 
-    private Integer like;
+    private Integer like = 0;
 
-    private Integer dislike;
+    private Integer dislike = 0;
+
+    private String genre;
 
     private LocalDateTime created = LocalDateTime.now();
 
@@ -34,9 +36,8 @@ public class Band {
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> musics;
 
-    @OneToOne
-    @JoinColumn(name = "band_id")
-    private Disc disc;
+    @OneToMany(mappedBy = "band")
+    private List<Disc> discs;
 
 
 }

@@ -1,5 +1,6 @@
 package com.greecode.IndependentBand.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -25,9 +26,9 @@ public class Disc {
 
     private LocalDate release;
 
-    private Integer like;
+    private Integer like = 0;
 
-    private Integer dislike;
+    private Integer dislike = 0;
 
 //    @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean deleted = false;
@@ -41,6 +42,8 @@ public class Disc {
     @OneToMany(mappedBy = "disc")
     private List<Music> musics;
 
-    @OneToOne(mappedBy = "disc")
+    @ManyToOne()
+    @JsonIgnore
+    @JoinColumn(name = "band_id")
     private Band band;
 }
