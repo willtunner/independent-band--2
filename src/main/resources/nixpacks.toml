@@ -1,5 +1,0 @@
-[phases.build]
-cmd = "mvn clean install"
-
-[phases.start]
-cmd = "java -jar target/seu-arquivo.jar"
