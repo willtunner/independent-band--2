@@ -2,7 +2,6 @@ package com.greecode.IndependentBand.controllers;
 
 import com.greecode.IndependentBand.models.User;
 import com.greecode.IndependentBand.models.response.Response;
-import com.greecode.IndependentBand.repositories.UserRepository;
 import com.greecode.IndependentBand.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
